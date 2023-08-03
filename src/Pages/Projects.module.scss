@@ -1,0 +1,148 @@
+@import "../mixins.scss";
+.sectionProjects {
+  min-height: 100vh;
+  background: linear-gradient(to right top, #6366f1, #4338ca);
+  padding: 10rem 0;
+
+  h1 {
+    font-family: var(--font-poppins);
+    font-size: 4rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-family: var(--font-poppins);
+    @include responsive("mobile") {
+      font-size: 3rem !important;
+    }
+  }
+
+  @include responsive("tab-land") {
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  @include responsive("tab-land") {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.containerReverse {
+  flex-direction: row-reverse !important;
+  text-align: right !important;
+
+  color: darken(#eef2ff, 0.4) !important;
+
+  div {
+    flex-direction: row-reverse;
+  }
+  p {
+    direction: rtl;
+    text-align: justify;
+  }
+
+  @include responsive("tab-land") {
+    flex-direction: column-reverse !important;
+    text-align: left !important;
+    color: #818cf8 !important;
+    p {
+      direction: ltr !important;
+    }
+  }
+}
+
+.projectWrapper {
+  background: linear-gradient(to right bottom, #eef2ff, #a5b4fc);
+  color: #818cf8;
+  padding: 4rem 3rem;
+  border-radius: 2rem;
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  justify-content: space-between;
+
+  @include responsive("tab-land") {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    max-width: 66rem;
+    margin: 0 auto;
+
+    p {
+      max-width: 60rem;
+    }
+  }
+
+  h2 {
+    letter-spacing: 3px;
+    font-size: 4rem;
+    line-height: 1.2;
+    font-family: var(--font-poppins);
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #3730a3;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-family: var(--font-poppins);
+  }
+
+  p {
+    font-size: 1.4rem;
+    text-align: justify;
+    margin-top: 1rem;
+  }
+
+  .img {
+    max-width: 60rem;
+    border-radius: 1rem;
+
+    box-shadow: rgba(#6366f1, 0.55) 0px 2px 5px -1px,
+      rgba(#6366f1, 0.5) 0px 1px 3px -1px;
+
+    @include responsive("tab-land") {
+      width: 100%;
+    }
+  }
+
+  .websiteCTA {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 100px;
+    background-color: #6366f1;
+    color: #eef2ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: var(--font-poppins);
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin-top: 1rem;
+
+    &:hover {
+      transform: translateY(-5px);
+      color: #fff;
+      box-shadow: rgba(#6366f1, 0.4) 0px 7px 29px 0px;
+    }
+  }
+}
+
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+
+  margin-top: 1rem;
+  justify-content: space-between;
+}

@@ -1,0 +1,122 @@
+@import "../mixins.scss";
+.nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: #eef2ff;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 120rem;
+    margin: 0 auto;
+
+    @include responsive("tab-land") {
+      padding: 0 2rem;
+    }
+  }
+  span {
+    font-family: var(--font-poppins);
+    color: #312e81;
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+
+    @include responsive("tab-port") {
+      display: none;
+    }
+
+    li {
+      position: relative;
+      padding: 0.5rem 0;
+
+      &:hover {
+        .decoration {
+          width: 100%;
+        }
+      }
+    }
+    a {
+      font-family: var(--font-poppins);
+      letter-spacing: 2px;
+      color: #4f46e5;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+:global(.active) {
+  color: #1e1b4b;
+}
+
+.decoration {
+  position: absolute;
+  height: 2px;
+  background-color: #4f46e5;
+  left: 50%;
+  width: 0;
+  transform: translateX(-50%);
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+
+// Mobile Confirguration
+
+.navBtn {
+  display: none;
+  font-size: 2.5rem;
+  color: #4f46e5;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  @include responsive("tab-port") {
+    display: block;
+  }
+}
+
+.mobileNav {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right top, #3730a3, #818cf8);
+  border-bottom: 1px solid #eef2ff;
+  display: flex;
+  z-index: 9999;
+  flex-direction: column;
+  top: 0;
+  position: fixed;
+  left: 0;
+
+  a {
+    padding: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--font-poppins);
+    color: #eef2ff;
+    font-weight: 400;
+    letter-spacing: 2px;
+    &:hover {
+      background-color: rgba(#eef2ff, 0.1);
+    }
+  }
+}
+
+.closeNav {
+  position: absolute;
+  background-color: transparent;
+  font-size: 4rem;
+  color: #eef2ff;
+  border: none;
+  outline: none;
+  right: 1rem;
+  top: 1rem;
+}

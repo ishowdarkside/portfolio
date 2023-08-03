@@ -1,0 +1,77 @@
+@import "../mixins.scss";
+.sectionIndex {
+  height: 100vh;
+  background: linear-gradient(to right top, #6366f1, #4338ca);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 7rem;
+    font-weight: 200;
+    font-family: var(--font-poppins);
+
+    @include responsive-custom(25em) {
+      font-size: 5rem;
+    }
+  }
+
+  span {
+    font-weight: 400;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+
+    @include responsive-custom(25em) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  margin-top: 2rem;
+
+  width: 31rem;
+  gap: 2rem;
+  position: relative;
+
+  a {
+    position: absolute;
+
+    &:first-of-type {
+      left: 0;
+    }
+    &:last-of-type {
+      right: 0;
+    }
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    background-color: #eef2ff;
+    color: #6366f1;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: var(--font-poppins);
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      color: #818cf8;
+      box-shadow: rgba(#fff, 0.2) 0px 7px 29px 0px;
+    }
+  }
+}

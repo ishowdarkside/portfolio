@@ -1,0 +1,40 @@
+@import "./mixins.scss";
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @include responsive("tab-port") {
+    font-size: 56.25%;
+  }
+
+  @include responsive("mobile") {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #eef2ff;
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+
+:root {
+  --font-poppins: "Poppins", "sans-serif";
+}
+
+.slick-arrow::before {
+  color: #4f46e5;
+}
+
+.slick-active button::before {
+  color: #4f46e5 !important;
+}
